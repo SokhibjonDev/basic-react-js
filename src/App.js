@@ -44,9 +44,14 @@ class App extends Component {
       cars
     })
   }
-  onDeleteHandler=(e)=>{
-    
-  }
+  onDeleteHandler = (idx) => {
+    let cars = [...this.state.cars];
+    cars.splice(idx, 1);
+    this.setState({
+      cars,
+    });
+  };
+
   render() {
     const AppStyle = {
       textAlign: 'center',
@@ -79,9 +84,9 @@ class App extends Component {
             onChange={
               this.onChangeTitleCarsHandler
             }
-            onDelete={
-              this.onDeleteHandler
-            }
+            onDelete={(e) => {
+              this.onDeleteHandler(index);
+            }}
           />
         )
       })
