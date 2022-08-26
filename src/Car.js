@@ -25,6 +25,7 @@ function Car(props) {
             <br />
             <input type="text" style={{ padding: '7px 10px' }} onChange={(e)=>{props.onChange(e.target.value, props.idx)}} /><br />
             <button style={ChangeBtn} onClick={props.onClick}>Change Title</button>
+            <button style={ChangeBtn} onClick={props.onDelete}>Delete</button>
         </div>
     )
 }

@@ -44,6 +44,9 @@ class App extends Component {
       cars
     })
   }
+  onDeleteHandler=(e)=>{
+    
+  }
   render() {
     const AppStyle = {
       textAlign: 'center',
@@ -75,6 +78,9 @@ class App extends Component {
             }
             onChange={
               this.onChangeTitleCarsHandler
+            }
+            onDelete={
+              this.onDeleteHandler
             }
           />
         )
