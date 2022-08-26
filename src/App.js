@@ -26,17 +26,16 @@ class App extends Component {
       showCars: !this.state.showCars
     })
   }
-  onChangeTitleInputHandler = (e) => { 
+  onChangeTitleInputHandler = (e) => {
     this.setState({
       title: e.target.value
     })
   }
-
-  // onChangeTitleButtonHandler = (name) => {     NOMER 1
-  //   this.setState({
-  //     title: name
-  //   })
-  // }
+  onChangeTitleButtonHandler = (name) => {
+    this.setState({
+      title: name
+    })
+  }
   render() {
     const AppStyle = {
       textAlign: 'center',
@@ -62,9 +61,9 @@ class App extends Component {
             key={Math.random()}
             name={car.name}
             year={car.year}
-            // onClick={
-            //   this.onChangeTitleButtonHandler.bind(this, car.name)     NOMER 1
-            // }
+            onClick={
+              this.onChangeTitleButtonHandler.bind(this, car.name)
+            }
           />
         )
       })
@@ -73,7 +72,7 @@ class App extends Component {
     return (
       <div div className="App" style={AppStyle} >
         <h1 style={{ fontSize: 60, margin: 10 }}>{this.state.title}</h1>
-        <input style={inputCSS} type="text" onChange={this.onChangeTitleInputHandler} /><br /><br /> 
+        <input style={inputCSS} type="text" onChange={this.onChangeTitleInputHandler} /><br /><br />
         <button style={buttonCSS} onClick={this.ToggleCarsHandler}>Click</button>
         <br />
         <br />
