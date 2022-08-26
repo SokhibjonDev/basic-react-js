@@ -36,6 +36,14 @@ class App extends Component {
       title: name
     })
   }
+  onChangeTitleCarsHandler = (value, idx) => {
+    let cars = [...this.state.cars]
+    cars[idx].name = value
+
+    this.setState({
+      cars
+    })
+  }
   render() {
     const AppStyle = {
       textAlign: 'center',
@@ -58,11 +66,15 @@ class App extends Component {
       div = this.state.cars.map((car, index) => {
         return (
           <Car
-            key={Math.random()}
+            key={index}
+            idx={index}
             name={car.name}
             year={car.year}
             onClick={
               this.onChangeTitleButtonHandler.bind(this, car.name)
+            }
+            onChange={
+              this.onChangeTitleCarsHandler
             }
           />
         )

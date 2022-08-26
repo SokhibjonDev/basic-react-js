@@ -23,6 +23,7 @@ function Car(props) {
             <p>{props.year}</p>
             <span>Id:<strong>{Math.floor(Math.random() * 4)}</strong></span>
             <br />
+            <input type="text" style={{ padding: '7px 10px' }} onChange={(e)=>{props.onChange(e.target.value, props.idx)}} /><br />
             <button style={ChangeBtn} onClick={props.onClick}>Change Title</button>
         </div>
     )
