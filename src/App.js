@@ -26,11 +26,11 @@ class App extends Component {
       showCars: !this.state.showCars
     })
   }
-  // onChangeTitleInputHandler = (e) => {     NOMER 2
-  //   this.setState({
-  //     title: e.target.value
-  //   })
-  // }
+  onChangeTitleInputHandler = (e) => { 
+    this.setState({
+      title: e.target.value
+    })
+  }
 
   // onChangeTitleButtonHandler = (name) => {     NOMER 1
   //   this.setState({
@@ -51,9 +51,9 @@ class App extends Component {
       fontSize: 20,
       letterSpacing: 2,
     }
-    // const inputCSS = {
-    //   padding: '7px 10px',
-    // }      NOMER 2
+    const inputCSS = {
+      padding: '7px 10px',
+    }
     let div = null
     if (this.state.showCars) {
       div = this.state.cars.map((car, index) => {
@@ -73,7 +73,7 @@ class App extends Component {
     return (
       <div div className="App" style={AppStyle} >
         <h1 style={{ fontSize: 60, margin: 10 }}>{this.state.title}</h1>
-        {/* <input style={inputCSS} type="text" onChange={this.onChangeTitleInputHandler} /><br /><br />      NOMER 2  */  }
+        <input style={inputCSS} type="text" onChange={this.onChangeTitleInputHandler} /><br /><br /> 
         <button style={buttonCSS} onClick={this.ToggleCarsHandler}>Click</button>
         <br />
         <br />
