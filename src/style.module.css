@@ -1,0 +1,17 @@
+.input {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.error {
+    background: transparent;
+    border: 1px solid red;
+    color: red;
+}
+
+.success {
+    background: transparent;
+    border: 1px solid green;
+    color: green;
+}

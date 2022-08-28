@@ -1,3 +1,4 @@
+import classes from './style.module.css'
 function Car(props) {
     const carStyle = {
         boxShadow: '0 0 10px #fff',
@@ -17,13 +18,19 @@ function Car(props) {
         fontSize: 20,
         letterSpacing: 2,
     }
+    const cls = [classes.input]
+    if (props.name.length <= 4) {
+        cls.push(classes.error)
+    } else {
+        cls.push(classes.success)
+    }
     return (
         <div className="Car" style={carStyle}>
             <h1>{props.name}</h1>
             <p>{props.year}</p>
             <span>Id:<strong>{Math.floor(Math.random() * 4)}</strong></span>
             <br />
-            <input type="text" style={{ padding: '7px 10px' }} onChange={(e)=>{props.onChange(e.target.value, props.idx)}} /><br />
+            <input className={cls.join(' ')} type="text" style={{ padding: '7px 10px' }} onChange={(e) => { props.onChange(e.target.value, props.idx) }} /><br />
             <button style={ChangeBtn} onClick={props.onClick}>Change Title</button>
             <button style={ChangeBtn} onClick={props.onDelete}>Delete</button>
         </div>

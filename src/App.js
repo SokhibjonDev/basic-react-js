@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Car from './Car'
+import classes from './style.module.css'
 
 class App extends Component {
   state = {
@@ -18,7 +19,8 @@ class App extends Component {
       },
     ],
     title: 'React Components',
-    showCars: false
+    showCars: false,
+    val: '',
   }
 
   ToggleCarsHandler = (e) => {
@@ -28,7 +30,8 @@ class App extends Component {
   }
   onChangeTitleInputHandler = (e) => {
     this.setState({
-      title: e.target.value
+      title: e.target.value,
+      val: e.target.value,
     })
   }
   onChangeTitleButtonHandler = (name) => {
@@ -69,6 +72,13 @@ class App extends Component {
     const inputCSS = {
       padding: '7px 10px',
     }
+    const cls = [this.state.val]
+
+    if (this.state.val.length <= 4) {
+      cls.push(classes.error)
+    } else {
+      cls.push(classes.success)
+    }
     let div = null
     if (this.state.showCars) {
       div = this.state.cars.map((car, index) => {
@@ -95,7 +105,7 @@ class App extends Component {
     return (
       <div div className="App" style={AppStyle} >
         <h1 style={{ fontSize: 60, margin: 10 }}>{this.state.title}</h1>
-        <input style={inputCSS} type="text" onChange={this.onChangeTitleInputHandler} /><br /><br />
+        <input className={cls.join(' ')} style={inputCSS} type="text" onChange={this.onChangeTitleInputHandler} /><br /><br />
         <button style={buttonCSS} onClick={this.ToggleCarsHandler}>Click</button>
         <br />
         <br />
