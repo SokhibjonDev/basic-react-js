@@ -3,26 +3,30 @@ import Car from './Car'
 import classes from './style.module.css'
 
 class App extends Component {
-  state = {
-    cars: [
-      {
-        name: 'Ford',
-        year: 2015
-      },
-      {
-        name: 'Ferrari',
-        year: 1999
-      },
-      {
-        name: 'Skyline',
-        year: 2002
-      },
-    ],
-    title: 'React Components',
-    showCars: false,
-    val: '',
-  }
+  constructor(props){
+    super(props)
 
+    this.state = {
+      cars: [
+        {
+          name: 'Ford',
+          year: 2015
+        },
+        {
+          name: 'Ferrari',
+          year: 1999
+        },
+        {
+          name: 'Skyline',
+          year: 2002
+        },
+      ],
+      title: this.props.title,
+      showCars: false,
+      val: '',
+    }
+  }
+  // State constructor ichiga ochiladi
   ToggleCarsHandler = (e) => {
     this.setState({
       showCars: !this.state.showCars
