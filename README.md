@@ -1,2 +1,2 @@
 # front-end_react-js
-project to get a job
+Practicing in react js
